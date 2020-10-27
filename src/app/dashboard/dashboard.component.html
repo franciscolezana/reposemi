@@ -1,0 +1,97 @@
+<!--Header-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark elegant-color-dark scrolling-navbar">
+        <img src="assets/logo.png" class="img-fluid" alt="Responsive image" width="100">
+        <pre class="tab">   </pre>
+        <a class="navbar-brand mr-auto" style="font-size: 40px; color: #ffffff"><strong>u</strong>Social</a>
+        <form class="form-inline">
+            <div class="md-form my-0">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-2">
+                        <li class="nav-item dropdown" dropdown>
+                            <a dropdownToggle class="nav-link dropdown-toggle"> {{nombre}} </a>  <!--Cambiar --------------------------------------------->
+                            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                                <a class="dropdown-item" (click)="LogOut()">Cerrar Sesión</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <img [src]=foto alt="Avatar" class="img-circle" alt="Responsive image" width="70">
+                </div>
+            </div>
+        </form>
+    </nav>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col mt-2">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <button type="button" (click)="inicio()" class="btn yellow darken-3 px-5 mr-1"><i
+                            class="fas fa-portrait"></i>
+                        Inicio</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-1">
+        </div>
+        
+            <div class="col-sm elegant-color-dark my-5">
+
+            <!-- Default form register -->
+            <form class="text-center p-5" action="#!">
+
+                <p class="h1 mb-4  white-text">Mis Datos</p>
+
+                <div class="form-row mb-4">
+                    <div class="col-8">
+                        <!-- Username -->
+                        <p class="text-left white-text">Nombre Conmpleto</p>
+                        <input type="text" name="txtNombre" [(ngModel)]="nombre_temp" id="defaultRegisterFormFName"
+                            class="form-control">
+                        <!-- User -->
+                        <p class="text-left mt-4 white-text">Usuario</p>
+                        <input type="text" name="txtUsuario" readonly="readonly" [(ngModel)]="usuario" id="defaultRegisterFormUser"
+                            class="form-control">
+                        <!-- Password -->
+                        <p class="text-left mt-4 white-text">Contraseña</p>
+                        <input type="password" name="txtPassword" [(ngModel)]="password"
+                            id="defaultRegisterFormPassword" class="form-control"
+                            aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                    </div>
+                    <div class="col">
+                        <!-- Imagen -->
+                        <p class="text-left white-text">Foto de Perfil</p>
+                        <img [src]="foto_temp" class="img-fluid" alt="Responsive image">
+
+                        <div class="input-group mt-2">
+                            <div class="custom-file">
+                                <input type="file" (change)="onFileSelected($event)" class="custom-file-input"
+                                    id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Subir Archivo</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="r">
+                    <!-- Sign up button -->
+                    <button class="btn yellow darken-3 btn-block my-4" (click)="actualizar()"
+                        type="submit">Actualizar Información</button></div>
+            </form>
+            <!-- Default form register -->
+
+
+        
+        </div>
+
+        <div class="col-1">
+        </div>
+    </div>
+</div>

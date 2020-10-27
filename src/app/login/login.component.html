@@ -1,0 +1,71 @@
+<!--Header-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark elegant-color-dark scrolling-navbar">
+        <a [routerLink]="['/home']"> <img src="assets/logo.png" class="img-fluid" alt="Responsive image" width="100"> </a>
+        <pre class="tab">   </pre>
+        <a class="navbar-brand mr-auto" [routerLink]="['/home']" style="font-size: 40px"><strong>u</strong>Photos</a>
+        <form class="form-inline">
+            <div class="md-form my-0">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-5">
+                        <li class="nav-item active ml-4">
+                            <a class="nav-link" [routerLink]="['/login']" style="font-size: 20px">Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/home']" style="font-size: 20px">|</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/signin']" style="font-size: 20px">Registrarse</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        <img src="assets/USAC.png" class="img-fluid" alt="Responsive image" width="130">
+    </nav>
+</header>
+
+
+<!--Main Layout-->
+
+
+<div class="container">
+    
+    
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-8 elegant-color-dark mt-5 mr-1">
+            <!-- Default form login -->
+            <form class="text-center  p-5">
+
+
+                <p class="h1 mb-4  white-text">Ingresar</p>
+
+                <!-- Email --> <!--[(ngModel)]="usuario"-->
+                <input type="email" name = "txtUser" id="txtEmail"  [(ngModel)]="usuario" class="form-control mb-4" placeholder="Usuario">
+
+                <!-- Password --> <!--[(ngModel)]="contrasenna"-->
+                <input type="password" name = "txtPassword" id="txtPass" [(ngModel)]="password" class="form-control mb-4" placeholder="Contraseña">
+
+                <div class="d-flex ">
+                    <div>
+                    </div>
+                </div>
+
+                <!-- Sign in button --> <!--(click)="Loguearse()-->
+                <button class="btn yellow darken-3 btn-block my-4" (click)="ingresar()" type="button" >Ingresar</button>
+
+                <!-- Register -->
+                <p class="mb-4  white-text"> ¿Aún no tienes cuenta?
+                    <a [routerLink]="['/signin']" style="color: #f9a825">Registrate</a>
+                </p>
+
+            </form>
+            <!-- Default form login -->
+        </div>
+    </div>
+</div>
+
+

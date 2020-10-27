@@ -1,0 +1,88 @@
+<!--Header-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark elegant-color-dark scrolling-navbar">
+        <a [routerLink]="['/home']"> <img src="assets/logo.png" class="img-fluid" alt="Responsive image" width="100">
+        </a>
+        <pre class="tab">   </pre>
+        <a class="navbar-brand mr-auto" [routerLink]="['/home']" style="font-size: 40px"><strong>u</strong>Photos</a>
+        <form class="form-inline">
+            <div class="md-form my-0">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-5">
+                        <li class="nav-item active ml-4">
+                            <a class="nav-link" [routerLink]="['/login']" style="font-size: 20px">Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/home']" style="font-size: 20px">|</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/signin']" style="font-size: 20px">Registrarse</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        <img src="assets/USAC.png" class="img-fluid" alt="Responsive image" width="130">
+    </nav>
+</header>
+
+
+<!--Main Layout-->
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm elegant-color-dark my-5">
+
+            <!-- Default form register -->
+            <form class="text-center p-5" action="#!">
+
+                <p class="h1 mb-4  white-text">Registrarse</p>
+
+                <div class="form-row mb-4">
+                    <div class="col-8">
+                        <!-- Username -->
+                        <input type="text" name="txtNombre" [(ngModel)]="nombre" id="defaultRegisterFormFName"
+                            class="form-control" placeholder="Nombre Completo">
+                        <!-- User -->
+                        <input type="text" name="txtUsuario" [(ngModel)]="usuario" id="defaultRegisterFormUser"
+                            class="form-control mt-4" placeholder="Usuario">
+                        <!-- Password -->
+                        <input type="password" name="txtPassword" [(ngModel)]="password"
+                            id="defaultRegisterFormPassword" class="form-control mt-4" placeholder="Contraseña"
+                            aria-describedby="defaultRegisterFormPasswordHelpBlock">
+                        <!-- Confirm Password -->
+                        <input type="password" name="txtPassword2" [(ngModel)]="password2"
+                            id="defaultRegisterFormPassword2" class="form-control mt-4"
+                            placeholder="Confirmar Contraseña" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+
+                        <!-- Default switch -->
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitches">
+                            <label class="custom-control-label mt-4" for="customSwitches">Toggle this switch element</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img [src]="url" class="img-fluid" alt="Responsive image">
+
+                        <div class="input-group mt-2">
+                            <div class="custom-file">
+                                <input type="file" (change)="onFileSelected($event)" class="custom-file-input"
+                                    id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Subir Archivo</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="r">
+                    <!-- Sign up button -->
+                    <button class="btn yellow darken-3 btn-block my-4" (click)="registrarse()"
+                        type="submit">Regístrate</button></div>
+            </form>
+            <!-- Default form register -->
+
+
+        </div>
+    </div>
+</div>

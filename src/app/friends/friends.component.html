@@ -1,0 +1,131 @@
+<!--Header-->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark elegant-color-dark scrolling-navbar">
+        <img src="assets/logo.png" class="img-fluid" alt="Responsive image" width="100">
+        <pre class="tab">   </pre>
+        <a class="navbar-brand mr-auto" style="font-size: 40px; color: #ffffff"><strong>u</strong>Social</a>
+        <form class="form-inline">
+            <div class="md-form my-0">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-2">
+                        <li class="nav-item dropdown" dropdown>
+                            <a dropdownToggle class="nav-link dropdown-toggle"> {{nombre}} </a>
+                            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                                <a class="dropdown-item" [routerLink]="['/dashboard']">Mi información</a>
+                                <a class="dropdown-item" (click)="LogOut()">Cerrar Sesión</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <img [src]=foto alt="Avatar" class="img-circle" alt="Responsive image" width="70">
+                </div>
+            </div>
+        </form>
+    </nav>
+</header>
+
+
+<div class="container-fluid grey lighten-2">
+    <div class="row">
+        <div class="col mt-2">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <button type="button" (click)="inicio()" class="btn yellow darken-3 px-5 mr-1"><i
+                            class="fas fa-portrait"></i>
+                        Inicio</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid grey lighten-2">
+    <div class="row">
+        <div class="col-1"></div>
+        
+        
+        <div class="col mr-5">
+            <!--Amigos -->
+            <section class="my-5 pb-3 white">
+                <div class="card-header border-0 font-weight-bold elegant-color-dark" style="color:#ffffff">
+                    Solicitudes de amistad
+                </div>
+                <div class="d-md-flex flex-md-fill ">
+                    <div class="container">
+                        <ul class="list-group mt-1">
+
+                            <li class="list-group-item align-items-center border-0" *ngFor="let solicitud of solicitudes">
+
+                                <!--1 amigo -->
+                                <div class="row mt-3">
+                                    <div class="col-4">
+                                        <div *ngIf="solicitud.foto == null; else elseBlock">
+                                            <img class="rounded-circle z-depth-1 img-fluid" [src]=url2
+                                                alt="Responsive image">
+                                        </div>
+                                        <ng-template #elseBlock>
+                                            <img class="rounded-circle z-depth-1 img-fluid" [src]=solicitud.foto
+                                                alt="Responsive image">
+                                        </ng-template>
+                                    </div>
+                                    <div class="col my-auto">
+                                        <p>{{solicitud.usuario}}</p>
+                                        <button type="button" (click)="aceptar(solicitud.usuario)" class="btn ml-2"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Amigos -->
+        </div>
+
+
+
+
+
+        <div class="col mr-5">
+            <!--Amigos -->
+            <section class="my-5 pb-3 white">
+                <div class="card-header border-0 font-weight-bold elegant-color-dark" style="color:#ffffff">
+                        Agregar amigos
+                </div>
+                <div class="d-md-flex flex-md-fill ">
+                    <div class="container">
+                        <ul class="list-group mt-1">
+
+                            <li class="list-group-item align-items-center border-0" *ngFor="let persona of personas">
+
+                                <!--1 amigo -->
+                                <div class="row mt-3">
+                                    <div class="col-4">
+                                        <div *ngIf="persona.foto == null; else elseBlock">
+                                            <img class="rounded-circle z-depth-1 img-fluid" [src]=url2
+                                                alt="Responsive image">
+                                        </div>
+                                        <ng-template #elseBlock>
+                                            <img class="rounded-circle z-depth-1 img-fluid" [src]=persona.foto
+                                                alt="Responsive image">
+                                        </ng-template>
+                                    </div>
+                                    <div class="col my-auto">
+                                        <p>{{persona.usuario}}</p>
+                                        <button type="button" (click)="agregar(persona.usuario)" class="btn ml-2"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Amigos -->
+        </div>
+    </div>
+</div>
